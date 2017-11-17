@@ -1,0 +1,20 @@
+---
+- hosts: webservers
+  sudo: yes
+  tasks:
+     - name: Create user
+       user:
+          name: adindu
+          shell: /bin/bash
+
+- hosts: webservers
+  sudo: yes
+  tasks:
+     - name: Install httpd
+       yum:
+         name: httpd
+         state: latest
+     - name: start httpd
+       service:
+             name: httpd
+             state: started

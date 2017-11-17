@@ -1,0 +1,14 @@
+---
+- hosts: webservers
+  tasks:
+     - name: Create file
+       file:
+          path: /tmp/mynewfile
+          state: touch
+     - name: Create directory
+       file:
+          path: /tmp/mydirectory
+           state: directory
+     - name: Move file
+       command: mv /tmp/mynewfile /tmp/mydirectory
+
